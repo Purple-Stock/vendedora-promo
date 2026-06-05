@@ -14,8 +14,16 @@ function bindPromoPage() {
   const copyPixButton = document.getElementById("copy-pix");
   const sharePageButton = document.getElementById("share-page");
   const shareLinkInput = document.getElementById("share-link");
+  const officialSiteLink = document.getElementById("official-site-link");
+  const officialSiteFooterLink = document.getElementById(
+    "official-site-footer-link"
+  );
 
   if (!stripeLink || !pixQrImage || !demoVideo) return;
+
+  for (const link of [officialSiteLink, officialSiteFooterLink]) {
+    if (link) link.href = PROMO_CONFIG.officialSiteUrl;
+  }
 
   productTitle.textContent = PROMO_CONFIG.productName;
   promoPrice.textContent = PROMO_CONFIG.promoPrice;

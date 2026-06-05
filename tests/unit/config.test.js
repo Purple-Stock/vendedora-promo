@@ -31,4 +31,8 @@ describe("PROMO_CONFIG", () => {
   it("exposes the public share link", () => {
     expect(PROMO_CONFIG.shareUrl).toBe("https://vendas.purplestock.com.br");
   });
+
+  it("exposes the official website link", () => {
+    expect(PROMO_CONFIG.officialSiteUrl).toBe("https://www.purplestock.com.br");
+  });
 });

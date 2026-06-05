@@ -4,6 +4,7 @@ export const PROMO_CONFIG = {
   promoDescription:
     "Promoção com 3 meses de acesso ao sistema. Organize seu estoque com QR Code, controle entradas e saídas em tempo real e compartilhe o acesso com sua equipe. Pagamento seguro por cartão ou PIX.",
   shareUrl: "https://vendas.purplestock.com.br",
+  officialSiteUrl: "https://www.purplestock.com.br",
   stripeUrl: "https://buy.stripe.com/cNidR900S6Xl2HO98p97G02",
   pixCopyPaste:
     "00020126360014BR.GOV.BCB.PIX0114244909870001385204000053039865406120.005802BR5901N6001C62070503***6304A14C",

@@ -97,14 +97,21 @@
       <div
         class="mx-auto flex max-w-3xl items-center justify-between px-4 py-3 sm:max-w-5xl sm:px-6 sm:py-4"
       >
-        <div class="flex items-center gap-2.5 sm:gap-3">
+        <a
+          id="official-site-link"
+          data-testid="official-site-link"
+          href="https://www.purplestock.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 transition hover:opacity-80 sm:gap-3"
+        >
           <div
             class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-xs font-bold tracking-tight sm:h-10 sm:w-10 sm:rounded-xl sm:text-sm"
           >
             PS
           </div>
           <span class="text-sm font-medium text-zinc-400">Purple Stock</span>
-        </div>
+        </a>
         <span
           class="rounded-full border border-brand-500/30 bg-brand-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-100 sm:px-3 sm:py-1 sm:text-xs"
         >
@@ -318,7 +325,17 @@
     <footer
       class="relative z-10 border-t border-white/10 px-4 py-5 text-center text-xs text-zinc-600 sm:py-6"
     >
-      Purple Stock — controle de estoque inteligente
+      <p>Purple Stock — controle de estoque inteligente</p>
+      <a
+        id="official-site-footer-link"
+        data-testid="official-site-footer-link"
+        href="https://www.purplestock.com.br"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-2 inline-block text-zinc-500 transition hover:text-brand-100"
+      >
+        www.purplestock.com.br
+      </a>
     </footer>
 
     <!-- Modal PIX -->

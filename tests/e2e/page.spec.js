@@ -28,6 +28,17 @@ test.describe("Pagina de promocao vendedora", () => {
     );
   });
 
+  test("linka para o site oficial purplestock.com.br", async ({ page }) => {
+    for (const testId of ["official-site-link", "official-site-footer-link"]) {
+      const link = page.getByTestId(testId);
+      await expect(link).toHaveAttribute(
+        "href",
+        "https://www.purplestock.com.br"
+      );
+      await expect(link).toHaveAttribute("target", "_blank");
+    }
+  });
+
   test("exibe titulo, preco e link Stripe", async ({ page }) => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
       "Purple Stock"
