@@ -10,6 +10,24 @@ test.describe("Pagina de promocao vendedora", () => {
     await expect(favicon).toHaveAttribute("href", "assets/favicon.svg");
   });
 
+  test("expoe metadados de link preview para WhatsApp", async ({ page }) => {
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+      "content",
+      /Purple Stock.*3 meses/i
+    );
+    await expect(
+      page.locator('meta[property="og:description"]')
+    ).toHaveAttribute("content", /QR Code/i);
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      "content",
+      "https://vendas.purplestock.com.br/assets/og-image.png"
+    );
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+      "content",
+      "https://vendas.purplestock.com.br/"
+    );
+  });
+
   test("exibe titulo, preco e link Stripe", async ({ page }) => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
       "Purple Stock"
