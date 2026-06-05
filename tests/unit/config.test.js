@@ -35,4 +35,8 @@ describe("PROMO_CONFIG", () => {
   it("exposes the official website link", () => {
     expect(PROMO_CONFIG.officialSiteUrl).toBe("https://www.purplestock.com.br");
   });
+
+  it("exposes WhatsApp contact phone", () => {
+    expect(PROMO_CONFIG.whatsappPhone).toBe("+55 21 98796-2324");
+  });
 });

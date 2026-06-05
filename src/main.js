@@ -2,6 +2,7 @@ import { PROMO_CONFIG } from "./config.js";
 import { copyText, showCopyFeedback } from "./clipboard.js";
 import { bindPixModal } from "./modal.js";
 import { buildShareMessage } from "./share.js";
+import { buildWhatsAppUrl } from "./whatsapp.js";
 
 function bindPromoPage() {
   const stripeLink = document.getElementById("stripe-link");
@@ -18,11 +19,19 @@ function bindPromoPage() {
   const officialSiteFooterLink = document.getElementById(
     "official-site-footer-link"
   );
+  const whatsappLink = document.getElementById("whatsapp-float");
 
   if (!stripeLink || !pixQrImage || !demoVideo) return;
 
   for (const link of [officialSiteLink, officialSiteFooterLink]) {
     if (link) link.href = PROMO_CONFIG.officialSiteUrl;
+  }
+
+  if (whatsappLink) {
+    whatsappLink.href = buildWhatsAppUrl(
+      PROMO_CONFIG.whatsappPhone,
+      PROMO_CONFIG.whatsappMessage
+    );
   }
 
   productTitle.textContent = PROMO_CONFIG.productName;

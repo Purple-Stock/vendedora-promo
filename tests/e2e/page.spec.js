@@ -28,6 +28,13 @@ test.describe("Pagina de promocao vendedora", () => {
     );
   });
 
+  test("exibe botao flutuante do WhatsApp", async ({ page }) => {
+    const whatsapp = page.getByTestId("whatsapp-float");
+    await expect(whatsapp).toBeVisible();
+    await expect(whatsapp).toHaveAttribute("href", /wa\.me\/5521987962324/);
+    await expect(whatsapp).toHaveAttribute("target", "_blank");
+  });
+
   test("linka para o site oficial purplestock.com.br", async ({ page }) => {
     for (const testId of ["official-site-link", "official-site-footer-link"]) {
       const link = page.getByTestId(testId);
