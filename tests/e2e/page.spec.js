@@ -5,6 +5,11 @@ test.describe("Pagina de promocao vendedora", () => {
     await page.goto("/");
   });
 
+  test("usa favicon do Purple Stock", async ({ page }) => {
+    const favicon = page.locator('link[rel="icon"]');
+    await expect(favicon).toHaveAttribute("href", "assets/favicon.svg");
+  });
+
   test("exibe titulo, preco e link Stripe", async ({ page }) => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
       "Purple Stock"
